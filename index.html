@@ -3,346 +3,1635 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Эксперт — Грузоперевозки</title>
-  <meta name="description" content="Гpузчики/Грузоперевозки 24/7. Tолько русcкие, oпытные и трезвыe cотpудники. Рабoтaeм бeз пpаздников и выхoдных, KPУГЛOСУТОЧНО. Работаeм в любыx paйoнаx гoродa, a тaк жe по вceй области. Стoимocть чаcа (oт 250 pуб. до 500 в чac) зависит oт о.">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap');
-:root {
-  --bg:#0b0f19;--surface:#131a2a;--text:#f1f5f9;--muted:#94a3b8;
-  --primary:#f59e0b;--accent:#fb7185;--dark:#05070d;
-  --font-body:'Outfit',system-ui,sans-serif;
-  --font-title:'Sora','Outfit',system-ui,sans-serif;
-  --radius:16px;--shadow:0 20px 60px rgba(2,6,23,.12);
+  <title>Эксперт — Грузоперевозки в Калининград</title>
+  <meta name="description" content="Профессиональные грузоперевозки от Эксперт в Калининград. Работаем 24/7.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+    :root {
+      --bg-dark: #0f1419;
+      --bg-darker: #050709;
+      --text: #e8e5df;
+      --text-dim: #9a958b;
+      --gold: #d4af37;
+      --gold-dark: #b8941e;
+      --border: rgba(212,175,55,0.2);
+      --shadow: 0 4px 20px rgba(0,0,0,0.5);
+      --font-heading: 'Cormorant', serif;
+      --font-body: 'Lato', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--bg-dark); color: var(--text); line-height: 1.6; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* === HEADER === */
+    .header {
+      background: rgba(5,7,9,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 75px;
+    }
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .nav {
+      display: flex;
+      gap: 36px;
+    }
+    .nav a {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.3s;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .nav a:hover { color: var(--gold); }
+    .header__cta {
+      padding: 11px 28px;
+      border-radius: 2px;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .header__cta:hover {
+      background: var(--gold);
+      color: var(--bg-dark);
+    }
+
+    /* === HERO === */
+    .hero {
+      position: relative;
+      padding: 120px 0 100px;
+      background: linear-gradient(to bottom, rgba(5,7,9,0.7) 0%, rgba(15,20,25,0.9) 100%),
+                  url('photo_1.jpg') center/cover no-repeat;
+      text-align: center;
+    }
+    .hero__label {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .hero__title {
+      font-family: var(--font-heading);
+      font-size: clamp(40px, 6vw, 68px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 28px;
+      color: var(--text);
+    }
+    .hero__subtitle {
+      font-size: 16px;
+      color: var(--text-dim);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 40px;
+      border-radius: 2px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: none;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .btn--gold {
+      background: var(--gold);
+      color: var(--bg-dark);
+    }
+    .btn--gold:hover {
+      background: var(--gold-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(212,175,55,0.3);
+    }
+    .btn--outline {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+    }
+    .btn--outline:hover {
+      background: var(--gold);
+      color: var(--bg-dark);
+    }
+
+    /* === INTRO === */
+    .intro {
+      padding: 90px 0;
+      background: var(--bg-darker);
+    }
+    .intro__content {
+      max-width: 750px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .intro__title {
+      font-family: var(--font-heading);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--gold);
+    }
+    .intro__text {
+      font-size: 16px;
+      color: var(--text-dim);
+      line-height: 1.9;
+      font-weight: 300;
+    }
+
+    /* === HALL === */
+    .hall {
+      padding: 90px 0;
+      background: var(--bg-dark);
+    }
+    .s-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .s-title__heading {
+      font-family: var(--font-heading);
+      font-size: clamp(36px, 4.5vw, 52px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--gold);
+    }
+    .s-title__sub {
+      font-size: 15px;
+      color: var(--text-dim);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+    .hall-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .hall-item {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .hall-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(212,175,55,0.2);
+    }
+    .hall-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+    .hall-item__label {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      padding: 6px 14px;
+      border-radius: 2px;
+      background: rgba(212,175,55,0.95);
+      color: var(--bg-dark);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .hall-item__content {
+      padding: 24px 20px;
+      background: var(--bg-darker);
+    }
+    .hall-item__title {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .hall-item__desc {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* === MENU === */
+    .menu {
+      padding: 90px 0;
+      background: var(--bg-darker);
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .menu-card {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 32px 28px;
+      transition: all 0.3s;
+    }
+    .menu-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 8px 32px rgba(212,175,55,0.15);
+    }
+    .menu-card__title {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .menu-card__list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .menu-card__list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      padding-left: 20px;
+      position: relative;
+      font-weight: 300;
+    }
+    .menu-card__list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 6px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* === SERVICES === */
+    .services {
+      padding: 90px 0;
+      background: var(--bg-dark);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .service-item {
+      text-align: center;
+      padding: 32px 20px;
+      background: var(--bg-darker);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+    .service-item:hover {
+      border-color: var(--gold);
+      transform: translateY(-6px);
+    }
+    .service-item__icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: rgba(212,175,55,0.1);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+    .service-item__title {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .service-item__desc {
+      font-size: 12px;
+      color: var(--text-dim);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* === CATERING === */
+    .catering {
+      padding: 90px 0;
+      background: var(--bg-darker);
+    }
+    .catering__content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .catering__image img {
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .catering__text h3 {
+      font-family: var(--font-heading);
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .catering__text p {
+      font-size: 15px;
+      color: var(--text-dim);
+      line-height: 1.9;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    /* === GALLERY === */
+    .gallery {
+      padding: 90px 0;
+      background: var(--bg-dark);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .gallery-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 24px rgba(212,175,55,0.2);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* === CONTACT === */
+    .contact {
+      padding: 90px 0;
+      background: var(--bg-darker);
+    }
+    .contact__wrapper {
+      max-width: 580px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact__phone {
+      font-family: var(--font-heading);
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 28px 0;
+      text-decoration: none;
+      display: block;
+      transition: all 0.3s;
+    }
+    .contact__phone:hover {
+      color: var(--gold-dark);
+    }
+    .form-wrapper {
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 40px;
+      margin-top: 40px;
+    }
+    .form-wrapper input,
+    .form-wrapper textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: var(--bg-darker);
+      color: var(--text);
+      font: inherit;
+      font-size: 13px;
+      margin-bottom: 16px;
+      transition: all 0.3s;
+    }
+    .form-wrapper input::placeholder,
+    .form-wrapper textarea::placeholder {
+      color: var(--text-dim);
+    }
+    .form-wrapper input:focus,
+    .form-wrapper textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .form-wrapper textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .form-wrapper .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* === FOOTER === */
+    .footer {
+      background: var(--bg-darker);
+      color: var(--text-dim);
+      padding: 50px 0 30px;
+      border-top: 1px solid var(--border);
+    }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer__logo {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .footer__desc {
+      font-size: 12px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+    .footer__title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer__links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 12px;
+      transition: color 0.3s;
+      font-weight: 300;
+    }
+    .footer__links a:hover {
+      color: var(--gold);
+    }
+    .footer__bottom {
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+
+    /* === FLOATING / MOBILE === */
+    .sticky-call,
+    .sticky-tg {
+      position: fixed;
+      right: 22px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #fff;
+      font-size: 24px;
+      z-index: 60;
+      transition: transform 0.3s;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    }
+    .sticky-call {
+      bottom: 92px;
+      background: linear-gradient(135deg, #4ade80, #22c55e);
+    }
+    .sticky-tg {
+      bottom: 28px;
+      background: linear-gradient(135deg, #38bdf8, #2563eb);
+    }
+    .sticky-call:hover,
+    .sticky-tg:hover {
+      transform: scale(1.12);
+    }
+
+    .mobile-cta {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 80;
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 12px;
+      background: rgba(5,7,9,0.98);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.4);
+    }
+    .mobile-cta a {
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 2px;
+      padding: 14px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .mobile-cta__call {
+      color: #fff;
+      background: #22c55e;
+    }
+    .mobile-cta__lead {
+      color: var(--bg-dark);
+      background: var(--gold);
+    }
+
+    /* === ANIMATIONS === */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    [data-animate].animated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 1024px) {
+      .hall-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .footer__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 700px) {
+      .nav {
+        display: none;
+      }
+      .hall-grid,
+      .menu-grid,
+      .services-grid,
+      .gallery-grid,
+      .catering__content {
+        grid-template-columns: 1fr;
+      }
+      .sticky-call,
+      .sticky-tg {
+        display: none;
+      }
+      .mobile-cta {
+        display: grid;
+      }
+      body {
+        padding-bottom: 80px;
+      }
+      .hero {
+        padding: 90px 0 70px;
+      }
+      .form-wrapper {
+        padding: 32px 24px;
+      }
+      .footer__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+<style>
+
+/* ===== CARGO BRAND STRIP ===== */
+.cargo-brand-strip {
+  display: block;
+  width: 100%;
+  background: linear-gradient(90deg, #111 0%, #1a1a1a 50%, #111 100%);
+  overflow: hidden;
+  line-height: 1;
+  padding: 0;
+  position: relative;
+  z-index: 99;
+  border-bottom: 3px solid rgba(255,200,0,0.7);
 }
-* { box-sizing:border-box; }
-html,body { margin:0; padding:0; background:var(--bg); color:var(--text); }
-body { font-family:var(--font-body); line-height:1.6; }
-h1,h2,h3,h4 { font-family:var(--font-title); line-height:1.15; margin:0 0 14px; }
-h1 { font-size:clamp(34px,5vw,62px); letter-spacing:-.02em; }
-h2 { font-size:clamp(28px,4vw,44px); letter-spacing:-.015em; margin-bottom:24px; }
-p { margin:0 0 12px; color:var(--muted); }
-.container { width:min(1200px,92%); margin:0 auto; }
-.section { padding:88px 0; }
-.section--muted { background:color-mix(in oklab, var(--surface) 76%, var(--primary) 8%); }
-.section--dark { background:var(--dark); }
-.section--dark h2,.section--dark p { color:#e2e8f0; }
+.cargo-brand-strip__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 0;
+  width: 100%;
+}
+.cargo-brand-strip__text {
+  font-family: 'Montserrat', 'Impact', 'Arial Black', sans-serif;
+  font-size: clamp(36px, 5.5vw, 90px);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  line-height: 0.9;
+  background: linear-gradient(90deg, #ffd000 0%, #fff8e0 40%, #ffd000 60%, #ffaa00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  animation: gruz-shimmer 3s ease-in-out infinite;
+  background-size: 200% 100%;
+}
+@keyframes gruz-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
 
-.header { position:sticky; top:0; z-index:50; backdrop-filter:blur(8px); border-bottom:1px solid color-mix(in oklab, var(--primary) 15%, transparent); }
-.header--classic,.header--split,.header--centered,.header--transparent { background:color-mix(in oklab, var(--surface) 90%, transparent); }
-.header--transparent { position:absolute; width:100%; background:transparent; border-bottom:none; }
-.header--transparent .logo,
-.header--transparent nav a,
-.header--transparent .btn--ghost { color:#ffffff; border-color:rgba(255,255,255,.45); }
-.navrow { min-height:74px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
-.logo { font-weight:800; letter-spacing:.2px; font-size:20px; }
-.logo-kicker { font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:800; color:var(--primary); white-space:nowrap; }
-.centerkicker { text-align:center; font-size:11px; letter-spacing:.16em; text-transform:uppercase; font-weight:800; color:var(--primary); padding-top:4px; }
-nav { display:flex; gap:24px; flex-wrap:wrap; }
-nav a { text-decoration:none; color:var(--text); font-weight:600; }
-.topbar { background:var(--dark); color:#fff; }
-.topbar__row { min-height:38px; display:flex; justify-content:space-between; align-items:center; font-size:14px; }
-.topbar a { color:#fff; text-decoration:none; font-weight:700; }
-.centerlogo { text-align:center; padding-top:14px; font-size:24px; font-weight:800; }
-.navcenter { padding:10px 0 16px; display:flex; justify-content:center; }
+/* ===== HERO TRUCK OVERLAY ===== */
+.cargo-hero-truck-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.5) saturate(1.2);
+  transition: transform 8s ease-out;
+}
+.cargo-hero-truck-overlay.parallax-active {
+  transform: scale(1.06);
+}
+.hero, .hero-band+.hero, section.hero {
+  position: relative;
+  overflow: hidden;
+}
 
-.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; border:none; border-radius:999px; padding:13px 24px; cursor:pointer; font-weight:700; text-decoration:none; background:linear-gradient(135deg,var(--primary),var(--accent)); color:#fff; box-shadow:var(--shadow); }
-.btn--sm { padding:10px 16px; font-size:14px; }
-.btn--ghost { background:transparent; color:var(--text); border:1.5px solid color-mix(in oklab, var(--primary) 30%, var(--text) 20%); box-shadow:none; }
+/* ===== SCROLL-REVEAL ANIMATIONS ===== */
+[data-animate], [data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-animate].animated, [data-reveal].animated {
+  opacity: 1;
+  transform: none;
+}
+[data-animate-left] {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-animate-left].animated { opacity: 1; transform: none; }
+[data-animate-right] {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-animate-right].animated { opacity: 1; transform: none; }
+[data-animate-scale] {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-animate-scale].animated { opacity: 1; transform: scale(1); }
 
-.hero { position:relative; overflow:hidden; }
-.hero .eyebrow { margin:0 0 10px; text-transform:uppercase; letter-spacing:.18em; font-size:12px; color:var(--accent); font-weight:800; }
-.hero__actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
-.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:stretch; }
-.hero--media-left { padding:110px 0 80px; }
-.hero--media-left .media { border-radius:22px; min-height:500px; background-size:cover; background-position:center; box-shadow:var(--shadow); }
-.hero--media-left .content { background:var(--surface); border-radius:22px; padding:42px; box-shadow:var(--shadow); }
+/* Staggered children */
+[data-animate]:nth-child(2) { transition-delay: 0.1s; }
+[data-animate]:nth-child(3) { transition-delay: 0.2s; }
+[data-animate]:nth-child(4) { transition-delay: 0.3s; }
+[data-animate]:nth-child(5) { transition-delay: 0.4s; }
 
-.hero--full { min-height:94vh; display:grid; place-items:center; background-image:linear-gradient(130deg, rgba(2,6,23,.65), rgba(2,6,23,.45)), var(--hero); background-size:cover; background-position:center; }
-.hero__content--center { text-align:center; max-width:880px; color:#fff; }
-.hero__content--center p { color:#e5e7eb; }
+/* ===== FLOATING TRUCK SVG ===== */
+.truck-float-svg {
+  position: absolute;
+  right: -220px;
+  bottom: 0;
+  width: min(500px, 55vw);
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 1s 0.4s ease, transform 1.2s 0.4s ease;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+}
+.truck-float-svg.animated {
+  opacity: 0.92;
+  transform: translateX(0);
+  right: -40px;
+}
 
-.hero--diag { min-height:90vh; display:grid; grid-template-columns:58% 42%; }
-.hero__diag-left { background:var(--dark); color:#fff; clip-path:polygon(0 0, 100% 0, 84% 100%, 0 100%); display:grid; align-items:center; }
-.hero__diag-left .inner { width:min(620px,88%); margin-left:auto; margin-right:8%; }
-.hero__diag-left p { color:#cbd5e1; }
-.hero__diag-right { background-size:cover; background-position:center; }
+/* ===== PULSE BUTTON ===== */
+.btn-pulse {
+  animation: btn-pulse-anim 2s ease-in-out infinite;
+}
+@keyframes btn-pulse-anim {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,208,0,0.5); }
+  50% { box-shadow: 0 0 0 16px rgba(255,208,0,0); }
+}
 
-.hero--glass { min-height:88vh; padding:90px 0; background-image:linear-gradient(120deg, rgba(2,6,23,.45), rgba(2,6,23,.5)), var(--hero); background-size:cover; background-position:center; }
-.glass { max-width:760px; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.34); border-radius:24px; padding:38px; backdrop-filter:blur(14px); color:#fff; }
-.glass p { color:#eff6ff; }
-.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:22px 0; }
-.stats div { background:rgba(15,23,42,.35); border-radius:14px; padding:14px; }
-.stats strong { display:block; font-size:24px; }
+/* ===== COUNTER ANIMATION ===== */
+.cargo-stat-num {
+  display: inline-block;
+  transition: color 0.3s;
+}
 
-.hero--minimal { min-height:86vh; background-image:var(--hero); background-size:cover; background-position:center; display:grid; align-items:end; }
-.hero--minimal .overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(2,6,23,.35), rgba(2,6,23,.82)); }
-.hero--minimal .hero__content { position:relative; z-index:1; color:#fff; padding-bottom:92px; max-width:760px; }
-.hero--minimal p { color:#dbeafe; }
+/* ===== PARTICLES ===== */
+.cargo-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+.cargo-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255,208,0,0.6);
+  animation: particle-rise linear infinite;
+}
+@keyframes particle-rise {
+  0% { opacity: 0; transform: translateY(0) scale(1); }
+  20% { opacity: 1; }
+  80% { opacity: 0.5; }
+  100% { opacity: 0; transform: translateY(-120vh) scale(0.3); }
+}
 
-.hero--stats { padding:100px 0 80px; }
-.hero--stats .panel { border-radius:24px; min-height:520px; background-size:cover; background-position:center; position:relative; overflow:hidden; }
-.hero--stats .panel::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(2,6,23,.2), rgba(2,6,23,.72)); }
-.statgrid { position:absolute; inset:auto 18px 18px; z-index:2; display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
-.statgrid div { background:rgba(255,255,255,.88); border-radius:12px; padding:12px; }
-.statgrid strong { display:block; font-size:22px; color:var(--dark); }
-
-.cards { display:grid; gap:18px; }
-.cards--4 { grid-template-columns:repeat(4,1fr); }
-.cards--3 { grid-template-columns:repeat(3,1fr); }
-.cards article,.service-list article,.rows article,.prices article { background:var(--surface); border-radius:18px; padding:24px; box-shadow:var(--shadow); }
-
-.service-list { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
-.rows { display:grid; gap:14px; }
-
-.prices { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-.prices--six { grid-template-columns:repeat(3,1fr); }
-.prices .featured { border:2px solid var(--primary); transform:translateY(-6px); }
-.price { font-size:34px; font-weight:800; color:var(--primary); margin:8px 0 10px; }
-.prices ul { margin:0; padding-left:18px; color:var(--muted); }
-
-.works-story .story-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
-.works-story img,.masonry img,.strip img { width:100%; height:100%; border-radius:14px; object-fit:cover; display:block; }
-.masonry { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-.masonry img:nth-child(2), .masonry img:nth-child(5) { grid-row:span 2; min-height:420px; }
-.masonry img { min-height:200px; }
-.strip { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; }
-.strip img { min-height:220px; }
-
-.timeline { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
-.timeline article { background:var(--surface); border-radius:14px; padding:18px; box-shadow:var(--shadow); }
-.timeline span { display:inline-flex; width:34px; height:34px; border-radius:999px; align-items:center; justify-content:center; background:var(--primary); color:#fff; font-weight:700; font-size:13px; margin-bottom:8px; }
-
-.lead { padding:86px 0; }
-.card-form,.panel-floating { max-width:760px; margin:0 auto; background:var(--surface); border-radius:22px; padding:30px; box-shadow:var(--shadow); }
-.lead--split { display:grid; grid-template-columns:44% 56%; }
-.lead__info { background:var(--dark); color:#fff; padding:44px; display:grid; gap:14px; align-content:center; }
-.lead__info p,.lead__info a { color:#e2e8f0; }
-.lead__form { background:color-mix(in oklab, var(--dark) 82%, #fff 18%); padding:32px; display:grid; align-items:center; }
-form { display:grid; gap:12px; }
-input,textarea { width:100%; border-radius:12px; border:1.5px solid color-mix(in oklab, var(--primary) 18%, #cbd5e1); padding:13px 14px; background:#fff; color:#0f172a; font:inherit; }
-.lead--split input,.lead--split textarea { background:#fff; }
-.fgrid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-
-.footer { background:var(--dark); color:#cbd5e1; padding:22px 0; }
-.footer__row { display:flex; justify-content:space-between; gap:12px; align-items:center; }
-
-.sticky-call,.sticky-tg { position:fixed; right:20px; width:56px; height:56px; border-radius:999px; display:grid; place-items:center; text-decoration:none; color:#fff; font-size:24px; box-shadow:0 12px 24px rgba(2,6,23,.25); z-index:60; }
-.sticky-call { bottom:92px; background:linear-gradient(135deg,#22c55e,#16a34a); }
-.sticky-tg { bottom:24px; background:linear-gradient(135deg,#0ea5e9,#2563eb); }
-
-.mobile-cta {
-  position: fixed;
+/* ===== ROAD LINE ANIMATION ===== */
+.cargo-road {
+  position: absolute;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  z-index: 80;
-  display: none;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  padding: 8px;
-  background: color-mix(in oklab, var(--dark) 84%, #000 16%);
-  box-shadow: 0 -8px 28px rgba(2,6,23,.35);
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,208,0,0.8) 0px, rgba(255,208,0,0.8) 40px,
+    transparent 40px, transparent 80px
+  );
+  background-size: 80px 6px;
+  animation: road-move 1.2s linear infinite;
+  z-index: 3;
 }
-.mobile-cta a {
-  text-align: center;
-  text-decoration: none;
-  font-weight: 800;
+@keyframes road-move {
+  from { background-position: 0 0; }
+  to { background-position: -80px 0; }
+}
+
+/* ===== TELEGRAM FORM ===== */
+.cargo-tg-form-section {
+  padding: 70px 0;
+  background: linear-gradient(135deg, #111 0%, #1c1c1c 100%);
+  position: relative;
+  overflow: hidden;
+}
+.cargo-tg-form-section::before {
+  content: '🚚';
+  position: absolute;
+  font-size: 200px;
+  opacity: 0.04;
+  right: -20px;
+  bottom: -30px;
+  pointer-events: none;
+}
+.cargo-tg-form {
+  max-width: 640px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,208,0,0.2);
   border-radius: 12px;
-  padding: 12px 10px;
+  padding: 40px;
+  backdrop-filter: blur(8px);
+}
+.cargo-tg-form__title {
+  font-family: 'Montserrat', 'Impact', 'Arial Black', sans-serif;
+  font-size: 36px;
+  letter-spacing: 2px;
+  color: #ffd000;
+  margin-bottom: 6px;
+  text-align: center;
+}
+.cargo-tg-form__sub {
   font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  margin-bottom: 28px;
 }
-.mobile-cta__call {
+.cargo-tg-form input,
+.cargo-tg-form select,
+.cargo-tg-form textarea {
+  display: block;
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,208,0,0.25);
   color: #fff;
-  background: linear-gradient(135deg,#22c55e,#16a34a);
+  padding: 13px 16px;
+  font-size: 14px;
+  font-family: inherit;
+  border-radius: 6px;
+  outline: none;
+  margin-bottom: 12px;
+  transition: border-color 0.3s, background 0.3s;
 }
-.mobile-cta__lead {
-  color: #fff;
-  background: linear-gradient(135deg,var(--primary),var(--accent));
+.cargo-tg-form input:focus,
+.cargo-tg-form textarea:focus {
+  border-color: #ffd000;
+  background: rgba(255,208,0,0.07);
+}
+.cargo-tg-form input::placeholder,
+.cargo-tg-form textarea::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+.cargo-tg-form textarea { height: 90px; resize: vertical; }
+.cargo-tg-form__btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(90deg, #ffd000, #ffaa00);
+  color: #111;
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  animation: btn-pulse-anim 2s ease-in-out infinite;
+  margin-top: 6px;
+  font-family: 'Montserrat', 'Impact', 'Arial Black', sans-serif;
+}
+.cargo-tg-form__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255,208,0,0.4);
+}
+.cargo-tg-form__success {
+  display: none;
+  text-align: center;
+  padding: 30px;
+  color: #4caf50;
+  font-size: 22px;
+  font-weight: 700;
 }
 
-@media (max-width:1024px) {
-  .cards--4,.cards--3,.prices,.timeline,.strip { grid-template-columns:repeat(2,1fr); }
-  .grid2,.hero--diag,.lead--split,.service-list { grid-template-columns:1fr; }
-  .hero__diag-left { clip-path:none; }
-  .masonry { grid-template-columns:repeat(2,1fr); }
-}
-@media (max-width:700px) {
-  nav { display:none; }
-  .cards--4,.cards--3,.prices,.timeline,.strip,.masonry,.service-list { grid-template-columns:1fr; }
-  .topbar__row,.footer__row { flex-direction:column; align-items:flex-start; }
-  .stats { grid-template-columns:1fr; }
-  .fgrid { grid-template-columns:1fr; }
-  .hero--media-left .content,.glass,.card-form,.panel-floating { padding:22px; }
-  .logo-kicker,.centerkicker { display:none; }
-  .sticky-call,.sticky-tg { display:none; }
-  .mobile-cta { display:grid; }
-  body { padding-bottom: 78px; }
-}</style>
-  <style>
-    .avito-meta {
-      margin: 12px auto 0;
-      width: min(1200px, 92%);
-      color: var(--muted);
-      font-size: 14px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .avito-meta span {
-      border: 1px solid color-mix(in oklab, var(--primary) 20%, transparent);
-      border-radius: 999px;
-      padding: 6px 11px;
-      background: color-mix(in oklab, var(--surface) 80%, var(--primary) 8%);
-      font-weight: 600;
-    }
-        
-        :root { --radius: 14px; }
-        .cards article,.service-list article,.rows article,.prices article,.timeline article { border-radius: 14px; }
-        .header { backdrop-filter: blur(6px); }
-        .btn { border-radius: 999px; }
-        
 
-        .prices article,.cards article { border: 1px solid color-mix(in oklab, var(--primary) 24%, transparent); }
-        .price { font-size: 38px; }
-        .btn { font-weight: 800; }
-        
-  </style>
+/* ===== MOBILE RESPONSIVE (injected by patcher) ===== */
+
+/* -- Общие мобильные фиксы -- */
+@media (max-width: 768px) {
+  html { font-size: 15px; }
+  .container { padding: 0 16px; }
+  section { padding: 50px 0 !important; }
+
+  /* -- HEADER -- */
+  .header__inner {
+    height: auto;
+    min-height: 56px;
+    padding: 8px 0;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .logo { gap: 8px; }
+  .logo__icon { width: 36px; height: 36px; font-size: 18px; }
+  .logo__text { font-size: 18px !important; letter-spacing: 1px; }
+  .header__phone {
+    font-size: 14px !important;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+  .nav { display: none !important; }
+
+  /* -- BRAND STRIP -- */
+  .cargo-brand-strip__text {
+    font-size: clamp(28px, 8vw, 52px) !important;
+    letter-spacing: 0.02em;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .cargo-brand-strip__inner { padding: 10px 0; }
+
+  /* -- HERO -- */
+  .hero {
+    padding: 0 !important;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+  }
+  .hero .container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .cargo-hero-truck-overlay {
+    filter: brightness(0.45) saturate(1.3) !important;
+  }
+  .hero__content { max-width: 100%; }
+  .hero__title {
+    font-size: clamp(32px, 9vw, 50px) !important;
+    letter-spacing: 1px;
+    line-height: 1.05 !important;
+    margin-bottom: 16px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .hero__subtitle {
+    font-size: 15px !important;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    color: rgba(255,255,255,0.92) !important;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  }
+  .hero__features {
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-bottom: 24px;
+  }
+  .hero__feature {
+    font-size: 12px !important;
+    padding: 10px 16px !important;
+    text-align: center;
+  }
+  .btn {
+    padding: 14px 28px;
+    font-size: 14px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* -- HERO TEXT COLOR FIX (for dark overlay) -- */
+  .hero .hero__title,
+  .hero .hero__content h1 {
+    color: #fff !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  /* -- SECTIONS -- */
+  .s-title__heading,
+  .section-title,
+  .section__title {
+    font-size: clamp(26px, 7vw, 40px) !important;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    word-break: break-word;
+  }
+
+  /* -- GRIDS -- */
+  .services-grid,
+  .types-grid,
+  .advantages__content,
+  .footer__grid,
+  .benefits-grid,
+  .pricing-grid,
+  .features-grid,
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* -- SERVICE CARDS -- */
+  .service-card, .svc-card, .pricing-card, .benefit-card, .feature-card {
+    padding: 28px 20px !important;
+  }
+  .service-card__title, .svc-card__title, .pricing-card__title {
+    font-size: 22px !important;
+  }
+  .service-card__icon { font-size: 42px !important; }
+
+  /* -- ADVANTAGES -- */
+  .advantages__image { order: -1; }
+  .advantages__text h2 {
+    font-size: clamp(28px, 7vw, 42px) !important;
+    line-height: 1.1;
+  }
+  .advantages__list li {
+    font-size: 14px;
+    padding: 12px 0;
+  }
+
+  /* -- TYPE CARDS -- */
+  .type-card__image { height: 200px; }
+  .type-card__content { padding: 24px 16px; }
+  .type-card__title { font-size: 24px !important; }
+  .type-card__price { font-size: 22px; }
+
+  /* -- CTA -- */
+  .cta-section h2 {
+    font-size: clamp(28px, 7vw, 44px) !important;
+    line-height: 1.1;
+  }
+  .cta-section p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .cta-section__content { max-width: 100%; padding: 0 8px; }
+
+  /* -- FORM -- */
+  .form-wrapper {
+    padding: 24px 16px !important;
+    border-width: 3px;
+  }
+  .form-wrapper input,
+  .form-wrapper textarea {
+    padding: 14px 16px;
+    font-size: 16px;
+    border-width: 2px;
+  }
+  .cargo-tg-form {
+    padding: 24px 16px !important;
+    margin: 0 -8px;
+  }
+  .cargo-tg-form__title { font-size: 26px !important; }
+  .cargo-tg-form__sub { font-size: 13px; }
+  .cargo-tg-form input,
+  .cargo-tg-form textarea {
+    font-size: 16px;
+    padding: 14px 14px;
+  }
+  .cargo-tg-form__btn {
+    font-size: 15px;
+    padding: 16px;
+  }
+
+  /* -- FOOTER -- */
+  .footer { padding: 40px 0 20px; }
+  .footer__logo { font-size: 24px !important; }
+  .footer__desc { font-size: 13px; }
+  .footer__grid { gap: 24px !important; }
+
+  /* -- FLOATING ELEMENTS -- */
+  .sticky-call, .sticky-tg { display: none !important; }
+  .mobile-cta {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+  }
+  .mobile-cta a {
+    padding: 16px 8px;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+  body { padding-bottom: 60px !important; }
+
+  /* -- Stats -- */
+  .stat__num, .cargo-stat-num {
+    font-size: 32px !important;
+  }
+  .stat__label {
+    font-size: 12px !important;
+  }
+
+  /* -- MISC -- */
+  .truck-float-svg { display: none !important; }
+}
+
+/* -- Extra small screens (< 400px) -- */
+@media (max-width: 400px) {
+  .logo__text { font-size: 15px !important; }
+  .header__phone { font-size: 12px !important; }
+  .hero__title { font-size: 28px !important; }
+  .cargo-brand-strip__text { font-size: 24px !important; }
+  .s-title__heading { font-size: 24px !important; }
+  .service-card__title { font-size: 20px !important; }
+}
+
+/* -- Landscape phones -- */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero { min-height: 70vh; }
+}
+
+
+/* Hero gradient overlay for text readability */
+.cargo-hero-truck-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.1) 0%,
+    rgba(0,0,0,0.3) 40%,
+    rgba(0,0,0,0.5) 100%
+  );
+  pointer-events: none;
+}
+.hero .hero__title,
+.hero .hero__content h1 {
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5), 0 0 40px rgba(0,0,0,0.3);
+}
+.hero .hero__subtitle {
+  color: rgba(255,255,255,0.92);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+}
+.hero .hero__feature {
+  background: rgba(0,0,0,0.7);
+  color: #ffd000;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,208,0,0.3);
+}
+.hero .btn--yellow {
+  background: #ffd000;
+  color: #111;
+  border: none;
+}
+.hero .btn--yellow:hover {
+  background: #ffe040;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255,208,0,0.4);
+}
+
+
+/* Toast notification animation */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+}
+</style>
 </head>
 <body>
-  
-<header class="header header--transparent">
-  <div class="container navrow"><div class="logo">Эксперт</div><span class="logo-kicker">ГРУЗОПЕРЕВОЗКИ</span><nav><a href="#services">Услуги</a><a href="#works">Портфолио</a><a href="#reviews">Отзывы</a></nav><a class="btn btn--ghost" href="tel:+7 (900) 000-00-00">+7 (900) 000-00-00</a></div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container header__inner">
+    <a href="#top" class="logo">Эксперт</a>
+    <nav class="nav">
+      <a href="#hall">Услуги</a>
+      <a href="#menu">Тарифы</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="#contacts" class="header__cta">Заказать</a>
+  </div>
 </header>
 
-        <div class="avito-meta"><span>TF:woodmart-v4.3.0</span><span>Kaliningrad</span><span>+7 (900) 000-00-00</span></div>
-  
-<section class="hero hero--full" style="--hero:url('photo_1.jpg')">
-  <div class="container hero__content hero__content--center">
-    <p class="eyebrow">PREMIUM CARGO SERVICE</p>
-    <h1>Эксперт<br>Грузоперевозки без компромиссов</h1>
-    <p>Гpузчики/Грузоперевозки 24/7. Tолько русcкие, oпытные и трезвыe cотpудники. Рабoтaeм бeз пpаздников и выхoдных, KPУГЛOСУТОЧНО. Работаeм в любыx paйoнаx гoродa, a тaк жe по вceй области. Стoимocть чаcа (oт 250 pуб. до 500 в чac) зависит oт о.</p>
-    <div class="hero__actions"><a class="btn" href="tel:+7 (900) 000-00-00">+7 (900) 000-00-00</a><a class="btn btn--ghost" href="#contact">Оставить заявку</a></div>
+<!-- CARGO BRAND STRIP -->
+<div class="cargo-brand-strip">
+  <div class="cargo-brand-strip__inner">
+    <span class="cargo-brand-strip__text">ГРУЗОПЕРЕВОЗКИ</span>
   </div>
-</section>
+</div>
+<!-- HERO -->
+<section class="hero" id="top">
+<div class="cargo-hero-truck-overlay" style="background-image:url('photo_1.jpg')" aria-hidden="true"></div>
+<div class="cargo-particles"></div>
+<div class="cargo-road"></div>
 
-  
-<section id="services" class="section section--muted">
+
+
   <div class="container">
-    <h2>Пакеты и тарифы</h2>
-    <div class="prices">
-      <article><h3>Start</h3><p class="price">от 2 000 ₽</p><ul><li>Подача авто</li><li>1 грузчик</li><li>До 2 часов</li></ul></article>
-      <article class="featured"><h3>Business</h3><p class="price">от 5 000 ₽</p><ul><li>Команда 2-3 человека</li><li>Упаковка</li><li>Фиксированная цена</li></ul></article>
-      <article><h3>Premium</h3><p class="price">от 9 000 ₽</p><ul><li>Полный переезд под ключ</li><li>Страхование</li><li>Личный менеджер</li></ul></article>
+    <div data-animate>
+      <div class="hero__label">С 2011 года в Маганске</div>
+      <h1 class="hero__title">ГРУЗОПЕРЕВОЗКИ<br>В КАЛИНИНГРАД</h1>
+      <p class="hero__subtitle">Профессиональная перевозка грузов любой сложности</p>
+      <div style="display: flex; gap: 14px; justify-content: center;">
+        <a href="#contacts" class="btn btn--gold">Оставить заявку</a>
+        <a href="#hall" class="btn btn--outline">Подробнее</a>
+      </div>
     </div>
   </div>
 </section>
 
-    
-<section id="services-prices" class="section section--muted">
+<!-- INTRO -->
+<section class="intro">
   <div class="container">
-    <h2>Услуги и цены</h2>
-    <div class="prices prices--six">
-      <article><h3>Газель 1.5т</h3><p class="price">от 2 000 ₽</p><ul><li>Подача от 30 мин</li><li>По городу и области</li></ul></article>
-      <article><h3>Переезд квартиры</h3><p class="price">от 5 000 ₽</p><ul><li>2 грузчика</li><li>Аккуратная упаковка</li></ul></article>
-      <article><h3>Офисный переезд</h3><p class="price">от 8 000 ₽</p><ul><li>Без простоя бизнеса</li><li>Работа по таймингу</li></ul></article>
-      <article><h3>Грузчики</h3><p class="price">от 700 ₽/ч</p><ul><li>Опытная бригада</li><li>Почасовая оплата</li></ul></article>
-      <article><h3>Межгород</h3><p class="price">от 12 000 ₽</p><ul><li>По РФ</li><li>Фиксированный маршрут</li></ul></article>
-      <article><h3>Срочная подача</h3><p class="price">от 2 500 ₽</p><ul><li>День-в-день</li><li>Приоритетный выезд</li></ul></article>
+    <div class="intro__content" data-animate>
+      <h2 class="intro__title">Поминальная Трапеза<br>«Маганский»</h2>
+      <p class="intro__text">Проведение поминок — это важь этап прощания с поможем человеком. Мы понимаем, насколько ответственным выборолзучает является подготовки поминального обеда. Поэтому мы предлагаем вам полный спектр услуг по организации поминок, что позволяет вам сосредоточиться на самом важ ном — на мямашин грузы родных и близких.</p>
     </div>
   </div>
 </section>
 
-  
-<section id="works" class="section">
+<!-- HALL -->
+<section class="hall" id="hall">
   <div class="container">
-    <h2>Портфолио</h2>
-    <div class="masonry">
-      <img src="photo_2.jpg" alt="">
-      <img src="photo_3.jpg" alt="">
-      <img src="photo_4.jpg" alt="">
-      <img src="photo_5.jpg" alt="">
-      <img src="photo_6.jpg" alt="">
-      <img src="photo_7.jpg" alt="">
+    <div class="s-title" data-animate>
+      <h2 class="s-title__heading">Поминальное меню</h2>
+      <p class="s-title__sub">Выберите оптимальный вариант для вашей логистики</p>
+    </div>
+    <div class="hall-grid">
+      <div class="hall-item" data-animate>
+        <img src="photo_2.jpg" alt="Поминальное место">
+        <div class="hall-item__label">Экспресс</div>
+        <div class="hall-item__content">
+          <div class="hall-item__title">Экспресс-доставка</div>
+          <div class="hall-item__desc">От 4 часов по городу. Срочная доставка грузов любой категории.</div>
+        </div>
+      </div>
+      <div class="hall-item" data-animate>
+        <img src="photo_3.jpg" alt="Restaurant">
+        <div class="hall-item__label">Комфорт</div>
+        <div class="hall-item__content">
+          <div class="hall-item__title">Междугородние перевозки</div>
+          <div class="hall-item__desc">Доставка по России и СНГ. Полное сопровождение груза.</div>
+        </div>
+      </div>
+      <div class="hall-item" data-animate>
+        <img src="photo_4.jpg" alt="Кафе">
+        <div class="hall-item__label">Премиум</div>
+        <div class="hall-item__content">
+          <div class="hall-item__title">Международные перевозки</div>
+          <div class="hall-item__desc">С таможенным оформлением и страхованием грузов.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-  
-<section id="reviews" class="section section--muted">
+<!-- MENU -->
+<section class="menu" id="menu">
   <div class="container">
-    <h2>Отзывы клиентов</h2>
-    <div class="cards cards--3">
-      <article><p>"Переехали аккуратно, без царапин и задержек. Цена совпала с расчётом."</p><h4>Анна, квартирный переезд</h4></article>
-      <article><p>"Офис перевезли за выходные, в понедельник команда вышла без простоя."</p><h4>Игорь, руководитель IT-компании</h4></article>
-      <article><p>"Очень чёткая коммуникация, всё по таймингу, рекомендую."</p><h4>Марина, доставка техники</h4></article>
+    <div class="s-title" data-animate>
+      <h2 class="s-title__heading">Доставка поминальных обедов</h2>
+      <p class="s-title__sub">Тарифные планы</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card" data-animate>
+        <div class="menu-card__title">Меню №1</div>
+        <ul class="menu-card__list">
+          <li>Доставка до 1 тонны</li>
+          <li>По городу</li>
+          <li>GPS-мониторинг</li>
+          <li>Страхование груза</li>
+          <li>Грузчики (опция)</li>
+          <li>Упаковка (опция)</li>
+        </ul>
+      </div>
+      <div class="menu-card" data-animate>
+        <div class="menu-card__title">Меню №2</div>
+        <ul class="menu-card__list">
+          <li>Доставка до 5 тонн</li>
+          <li>Междугородние рейсы</li>
+          <li>Фиксированная ставка</li>
+          <li>Полное страхование</li>
+          <li>Догруз попутным грузом</li>
+          <li>Личный менеджер</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-  
-<section id="process" class="section">
+<!-- SERVICES -->
+<section class="services">
   <div class="container">
-    <h2>Как проходит перевозка</h2>
-    <div class="timeline">
-      <article><span>01</span><h3>Заявка</h3><p>Быстрый расчёт стоимости и времени.</p></article>
-      <article><span>02</span><h3>Подготовка</h3><p>Упаковка, маркировка, чек-лист.</p></article>
-      <article><span>03</span><h3>Перевозка</h3><p>Бережная погрузка и доставка по маршруту.</p></article>
-      <article><span>04</span><h3>Сдача</h3><p>Разгрузка, расстановка, закрывающие документы.</p></article>
+    <div class="s-title" data-animate>
+      <h2 class="s-title__heading">НАШИ УСЛУГИ</h2>
+      <p class="s-title__sub">Дополнительные услуги</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-item" data-animate>
+        <div class="service-item__icon">📦</div>
+        <div class="service-item__title">Упаковка</div>
+        <div class="service-item__desc">Профессиональная упаковка любых грузов</div>
+      </div>
+      <div class="service-item" data-animate>
+        <div class="service-item__icon">🏢</div>
+        <div class="service-item__title">Складирование</div>
+        <div class="service-item__desc">Хранение на охраняемых складах</div>
+      </div>
+      <div class="service-item" data-animate>
+        <div class="service-item__icon">👨‍💼</div>
+        <div class="service-item__title">Грузчики</div>
+        <div class="service-item__desc">Опытная команда грузчиков</div>
+      </div>
+      <div class="service-item" data-animate>
+        <div class="service-item__icon">📋</div>
+        <div class="service-item__title">Оформление</div>
+        <div class="service-item__desc">Документальное сопровождение</div>
+      </div>
     </div>
   </div>
 </section>
 
-  
-<section id="contact" class="lead lead--floating">
+<!-- CATERING -->
+<section class="catering">
   <div class="container">
-    <div class="panel-floating">
-      <h2>Рассчитайте стоимость переезда</h2>
-      <form class="js-form" data-bot-token="8434584674:AAGvxeQulQDyaESBQeu7rF5siC6HHs2McrE" data-chat-id="549333404">
-        <div class="fgrid"><input name="name" placeholder="Имя" required><input name="phone" placeholder="Телефон" required></div>
-        <textarea name="message" rows="4" placeholder="Адреса и детали"></textarea>
-        <button type="submit" class="btn">Получить расчёт</button>
-      </form>
+    <div class="catering__content">
+      <div class="catering__image" data-animate>
+        <img src="photo_5.jpg" alt="Кейтеринг">
+      </div>
+      <div class="catering__text" data-animate>
+        <h3>Отдельные залы для<br>поминальной трапезы</h3>
+        <p>У нас есть несколько отдельных залов, которые можно арендовать для проведения поминок. Каждый зал можем вместимостью от 20 до 100 человек, что позволяет выбрать доставочший для вашей компании.</p>
+        <p>Мы предоставляем полный сервис: от сервированния столов разнообразного меню до десерта. Наш опытый персонал протаснет вам через весь вопрос, чтобы вы могли полностью посвятить время вашим гостям.</p>
+        <a href="#contacts" class="btn btn--outline">Забронировать зал</a>
+      </div>
     </div>
   </div>
 </section>
 
-  
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="s-title" data-animate>
+      <h2 class="s-title__heading">Курсы меню. Фото с грушиванием достижения</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" data-animate><img src="photo_6.jpg" alt="Gallery 1"></div>
+      <div class="gallery-item" data-animate><img src="photo_7.jpg" alt="Gallery 2"></div>
+      <div class="gallery-item" data-animate><img src="photo_8.jpg" alt="Gallery 3"></div>
+      <div class="gallery-item" data-animate><img src="photo_9.jpg" alt="Gallery 4"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contacts">
+  <div class="container">
+    <div class="contact__wrapper">
+      <div class="s-title" data-animate>
+        <h2 class="s-title__heading">Почему выбирают нас?</h2>
+        <p class="s-title__sub">База с номером есть + бес плат позвонить</p>
+      </div>
+      <a href="tel:+79000000000" class="contact__phone" data-animate>+7(491)77-48</a>
+      <div class="form-wrapper" data-animate>
+        <form class="js-form" data-bot-token="8434584674:AAGvxeQulQDyaESBQeu7rF5siC6HHs2McrE" data-chat-id="549333404">
+          <input name="name" placeholder="Ваше имя" required>
+          <input name="phone" placeholder="телефон" required>
+          <textarea name="message" placeholder="Комментарий"></textarea>
+          <button type="submit" class="btn btn--gold">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<!-- ===== TELEGRAM FORM (без PHP, для GitHub Pages) ===== -->
+<section class="cargo-tg-form-section" id="cargo-zayavka">
+  <div class="container" style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <form class="cargo-tg-form" data-bot-token="8434584674:AAGvxeQulQDyaESBQeu7rF5siC6HHs2McrE" data-chat-id="549333404" autocomplete="off">
+      <div class="cargo-tg-form__title">ОСТАВИТЬ ЗАЯВКУ</div>
+      <div class="cargo-tg-form__sub">Ответим в течение 15 минут · Бесплатный выезд на замер</div>
+      <input name="name" type="text" placeholder="Ваше имя" required>
+      <input name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+      <input name="cargo" type="text" placeholder="Что перевозите? (груз, объём)">
+      <input name="route" type="text" placeholder="Маршрут (откуда — куда)">
+      <textarea name="message" placeholder="Дополнительные пожелания..."></textarea>
+      <button type="submit" class="cargo-tg-form__btn">📲 ОТПРАВИТЬ В TELEGRAM</button>
+      <div class="cargo-tg-form__success">✅ Заявка отправлена! Ожидайте звонка.</div>
+    </form>
+  </div>
+</section>
+
 <footer class="footer">
-  <div class="container footer__row"><strong>Эксперт</strong><span>© 2026. Все права защищены.</span></div>
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">Эксперт</div>
+        <div class="footer__desc">Профессиональные грузоперевозки в Калининград. Работаем с 2015 года.</div>
+      </div>
+      <div>
+        <div class="footer__title">Услуги</div>
+        <div class="footer__links">
+          <a href="#">Экспресс-доставка</a>
+          <a href="#">Междугородние</a>
+          <a href="#">Международные</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__title">Компания</div>
+        <div class="footer__links">
+          <a href="#">О нас</a>
+          <a href="#">Контакты</a>
+          <a href="#">Отзывы</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__title">Контакты</div>
+        <div class="footer__links">
+          <a href="tel:+79000000000">+7 (900) 000-00-00</a>
+          <a href="mailto:info@info.ru">info@info.ru</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      © 2026 Эксперт. Все права защищены.
+    </div>
+  </div>
 </footer>
+
+<!-- FLOATING -->
 <a class="sticky-call" href="tel:+79000000000">📞</a>
 <a class="sticky-tg" href="https://t.me/+79000000000">✈️</a>
 <div class="mobile-cta">
   <a class="mobile-cta__call" href="tel:+79000000000">Позвонить</a>
-  <a class="mobile-cta__lead" href="#contact">Заявка</a>
+  <a class="mobile-cta__lead" href="#contacts">Заказать</a>
 </div>
 
-  <script>
-for (const form of document.querySelectorAll('.js-form')) {
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const payload = new FormData(form);
-    const msg = [
-      '🚚 Новая заявка с сайта',
-      '',
-      'Имя: ' + (payload.get('name') || ''),
-      'Телефон: ' + (payload.get('phone') || ''),
-      'Сообщение: ' + (payload.get('message') || '')
-    ].join('\n');
+<script>
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animated');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
 
+// Telegram form
+for (const form of document.querySelectorAll('.js-form')) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    const msg = ['🚚 Новая заявка с сайта', '', 'Имя: ' + (fd.get('name') || ''), 'Телефон: ' + (fd.get('phone') || ''), 'Сообщение: ' + (fd.get('message') || '')].join('\n');
     try {
       const res = await fetch('https://api.telegram.org/bot' + form.dataset.botToken + '/sendMessage', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ chat_id: form.dataset.chatId, text: msg })
+        method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ chat_id: 549333404, text: msg })
       });
-      if (!res.ok) throw new Error('telegram_error');
-      alert('Заявка отправлена. Свяжемся с вами в ближайшее время.');
+      if (!res.ok) throw new Error();
+      (function(){var _n=document.createElement('div');_n.textContent='Заявка отправлена! Перезвоним в течение 15 минут.';_n.style.cssText='position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#4caf50;color:#fff;padding:16px 32px;border-radius:8px;z-index:9999;font-size:16px;font-weight:700;box-shadow:0 4px 20px rgba(0,0,0,0.3);animation:fadeInOut 3s forwards';document.body.appendChild(_n);setTimeout(function(){_n.remove()},3500)})();
       form.reset();
-    } catch (e) {
-      alert('Не удалось отправить заявку. Позвоните нам напрямую.');
-    }
+    } catch { (function(){var _n=document.createElement('div');_n.textContent='Не удалось отправить. Позвоните нам напрямую.';_n.style.cssText='position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#f44336;color:#fff;padding:16px 32px;border-radius:8px;z-index:9999;font-size:16px;font-weight:700;box-shadow:0 4px 20px rgba(0,0,0,0.3);animation:fadeInOut 3s forwards';document.body.appendChild(_n);setTimeout(function(){_n.remove()},4000)})(); }
   });
 }
 </script>
+
+<script>
+(function(){
+  // ===== SCROLL REVEAL =====
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+        revealObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('[data-animate],[data-reveal],[data-animate-left],[data-animate-right],[data-animate-scale]')
+    .forEach(el => revealObs.observe(el));
+
+  // ===== PARALLAX TRUCK =====
+  const truckOverlay = document.querySelector('.cargo-hero-truck-overlay');
+  if (truckOverlay) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      truckOverlay.style.transform = 'scale(1.06) translateY(' + (scrolled * 0.15) + 'px)';
+    }, {passive: true});
+    setTimeout(() => truckOverlay.classList.add('parallax-active'), 300);
+  }
+
+  // ===== ANIMATED COUNTERS =====
+  function animCounter(el, target, duration) {
+    let start = 0;
+    const step = target / (duration / 16);
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) { start = target; clearInterval(timer); }
+      el.textContent = Math.round(start).toLocaleString('ru') + (el.dataset.suffix || '');
+    }, 16);
+  }
+  const cntObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        if (!el.dataset.counted) {
+          el.dataset.counted = '1';
+          animCounter(el, parseInt(el.dataset.target, 10), 1400);
+        }
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-target]').forEach(el => cntObs.observe(el));
+
+  // ===== PARTICLES =====
+  const particleContainers = document.querySelectorAll('.cargo-particles');
+  particleContainers.forEach(container => {
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('span');
+      p.className = 'cargo-particle';
+      p.style.cssText = [
+        'left:' + (Math.random()*100) + '%',
+        'bottom:' + (Math.random()*30) + 'px',
+        'width:' + (2 + Math.random()*4) + 'px',
+        'height:' + (2 + Math.random()*4) + 'px',
+        'animation-duration:' + (4 + Math.random()*8) + 's',
+        'animation-delay:' + (Math.random()*6) + 's',
+        'opacity:' + (0.3 + Math.random()*0.5)
+      ].join(';');
+      container.appendChild(p);
+    }
+  });
+
+  // ===== TELEGRAM FORM =====
+  document.querySelectorAll('.cargo-tg-form[data-bot-token]').forEach(form => {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('.cargo-tg-form__btn');
+      const success = form.querySelector('.cargo-tg-form__success');
+      const fields = form.querySelectorAll('input,textarea,select');
+      btn.disabled = true;
+      btn.textContent = 'ОТПРАВЛЯЕМ...';
+      const lines = ['\uD83D\uDE9A Новая заявка с сайта ГРУЗОПЕРЕВОЗКИ', ''];
+      fields.forEach(f => {
+        if (f.name && f.value) {
+          const labels = {name:'Имя',phone:'Телефон',cargo:'Груз',route:'Маршрут',date:'Дата',message:'Сообщение',weight:'Вес'};
+          lines.push((labels[f.name] || f.name) + ': ' + f.value);
+        }
+      });
+      lines.push('', '\uD83D\uDCCD Сайт: ' + window.location.hostname);
+      try {
+        const res = await fetch('https://api.telegram.org/bot' + form.dataset.botToken + '/sendMessage', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({chat_id: 549333404, text: lines.join('\n'), parse_mode: 'HTML'})
+        });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        if (success) { success.style.display = 'block'; }
+        fields.forEach(f => { if (f.tagName !== 'SELECT') f.value = ''; });
+        btn.textContent = '✅ ОТПРАВЛЕНО!';
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.textContent = 'ОТПРАВИТЬ ЗАЯВКУ';
+          if (success) success.style.display = 'none';
+        }, 4000);
+      } catch(err) {
+        btn.disabled = false;
+        btn.textContent = 'ОТПРАВИТЬ ЗАЯВКУ';
+        (function(){var _n=document.createElement('div');_n.textContent='Ошибка отправки. Позвоните нам напрямую.';_n.style.cssText='position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#f44336;color:#fff;padding:16px 32px;border-radius:8px;z-index:9999;font-size:16px;font-weight:700;box-shadow:0 4px 20px rgba(0,0,0,0.3);animation:fadeInOut 3s forwards';document.body.appendChild(_n);setTimeout(function(){_n.remove()},4000)})();
+      }
+    });
+  });
+
+  // ===== OLD FORM SUPPORT (если есть .js-form) =====
+  document.querySelectorAll('.js-form').forEach(form => {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const token = form.dataset.botToken || '8434584674:AAGvxeQulQDyaESBQeu7rF5siC6HHs2McrE';
+      const chatId = form.dataset.chatId || '549333404';
+      const msg = ['\uD83D\uDE9A Заявка с сайта ГРУЗОПЕРЕВОЗКИ','',
+        '\uD83D\uDC64 Имя: ' + (fd.get('name')||''),
+        '\uD83D\uDCF1 Телефон: ' + (fd.get('phone')||''),
+        '\uD83D\uDCE6 Груз: ' + (fd.get('cargo')||''),
+        '\uD83D\uDCDD Сообщение: ' + (fd.get('message')||''),
+        '\uD83C\uDF10 Сайт: ' + window.location.hostname
+      ].join('\n');
+      try {
+        const res = await fetch('https://api.telegram.org/bot' + token + '/sendMessage', {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({chat_id: 549333404, text: msg})
+        });
+        if (!res.ok) throw new Error();
+        (function(){var _n=document.createElement('div');_n.textContent='\u2705 Заявка отправлена! Перезвоним в течение 15 минут.';_n.style.cssText='position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#4caf50;color:#fff;padding:16px 32px;border-radius:8px;z-index:9999;font-size:16px;font-weight:700;box-shadow:0 4px 20px rgba(0,0,0,0.3);animation:fadeInOut 3s forwards';document.body.appendChild(_n);setTimeout(function(){_n.remove()},3500)})();
+        form.reset();
+      } catch {
+        (function(){var _n=document.createElement('div');_n.textContent='Ошибка отправки. Позвоните нам напрямую.';_n.style.cssText='position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#f44336;color:#fff;padding:16px 32px;border-radius:8px;z-index:9999;font-size:16px;font-weight:700;box-shadow:0 4px 20px rgba(0,0,0,0.3);animation:fadeInOut 3s forwards';document.body.appendChild(_n);setTimeout(function(){_n.remove()},4000)})();
+      }
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
